@@ -62,3 +62,7 @@ print("Classification Report:\n", report)
 - **Model Compatibility**: The `loaded_model` should be compatible with the input data shape and type.
 - **Threshold Selection**: The threshold value for converting predictions to binary labels is subjectively set at 0.5. This value may need adjustment based on specific use cases or desired sensitivity.
 - **Metrics Interpretation**: The classification report provides various metrics that need careful interpretation within the context of the specific problem and dataset characteristics.
+
+---
+
+# [PART - 6 —>](https://github.com/saifeemustafaq/AIYA_December_2023/blob/main/ImageClassifierDoc/Part_6.md)

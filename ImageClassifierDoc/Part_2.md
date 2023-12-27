@@ -158,3 +158,8 @@ print("Labels:", labels)
 - Finally, the shapes of the data and labels arrays are printed, providing a quick verification of the data processed.
 
 This script effectively sets up a pipeline for fetching and preprocessing image data from AWS S3, which can be a critical step in various machine learning and data processing workflows, particularly in image-based applications.
+
+---
+
+
+# [PART - 3 —>](https://github.com/saifeemustafaq/AIYA_December_2023/blob/main/ImageClassifierDoc/Part_3.md)

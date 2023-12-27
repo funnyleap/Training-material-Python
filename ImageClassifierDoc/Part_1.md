@@ -35,3 +35,8 @@ This sets up the environment for tasks related to:
 - Building and training machine learning models using `tensorflow` and `scikit-learn`.
 - Processing images, possibly for machine learning tasks, using `PIL`.
 - Interacting with AWS services using `boto3` for tasks like storing or retrieving data.
+
+
+---
+
+# [PART - 2 =>](https://github.com/saifeemustafaq/AIYA_December_2023/blob/main/ImageClassifierDoc/Part_2.md)

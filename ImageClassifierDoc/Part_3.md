@@ -74,3 +74,7 @@ This script is set up for a binary image classification task using a CNN. This t
 - **Data and Label Shape**: It is essential that the `data` and `labels` are correctly preprocessed and encoded to match the expected input format of the model.
 - **Binary Classification**: The final layer uses a `sigmoid` activation function, indicating the model is configured for binary classification. For multi-class classification, this would need adjustment.
 - **Hyperparameters**: The choice of hyperparameters (like the number of layers, number of neurons, kernel size, etc.) directly impacts the model's performance and should be tuned according to the specific application and dataset.
+
+---
+
+# [PART - 4 —>](https://github.com/saifeemustafaq/AIYA_December_2023/blob/main/ImageClassifierDoc/Part_4.md)

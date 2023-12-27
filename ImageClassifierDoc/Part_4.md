@@ -77,3 +77,7 @@ print("Predictions:", predictions)
 - **AWS Credentials**: To interact with AWS services, appropriate credentials and permissions are required. These are not explicitly defined in the script but are crucial for its execution.
 - **File Paths**: Local and S3 file paths need to be valid and accessible.
 - **Model Compatibility**: The saved and loaded model should be compatible with the TensorFlow/Keras version used.
+
+---
+
+# [PART - 5 —>](https://github.com/saifeemustafaq/AIYA_December_2023/blob/main/ImageClassifierDoc/Part_5.md)

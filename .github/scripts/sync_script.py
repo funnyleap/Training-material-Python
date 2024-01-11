@@ -99,7 +99,7 @@ update_repo2(latest_file_content, "saifeemustafaq/OnboardingHarness", "JanBlogs/
 
 
 '''
-Links that helped you for authentication
++++Links that helped you for authentication+++
 https://github.com/actions/checkout/issues/13
 https://github.com/actions/checkout/pull/1184
 https://github.com/actions/runner-images/blob/7fa12b880649ddd0a00fed00b79a5bd4aed462ab/.github/workflows/merge_pull_request.yml#L19-L20
@@ -121,5 +121,8 @@ while in the yaml file we used:
         run: |
           git config user.name "Actions service account"
           git config user.email "no-reply@github.com"
+
++++Links to understand basic YAML structure for github automation+++
+https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
 
 '''

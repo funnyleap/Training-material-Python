@@ -33,8 +33,8 @@ def update_repo2(latest_file_content, repo2_name, file_path_in_repo2):
     repo.git.checkout(new_branch)
 
     # Set Git config
-    repo.git.config('user.email', 'github-actions@github.com')
-    repo.git.config('user.name', 'github-actions[bot]')
+    #repo.git.config('user.email', 'github-actions@github.com')
+    #repo.git.config('user.name', 'github-actions[bot]')
 
     # Update the file in repo2
     file_path = os.path.join(repo2_dir, file_path_in_repo2)

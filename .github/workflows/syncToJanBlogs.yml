@@ -26,7 +26,7 @@ jobs:
       - name: Set Git Config
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions@github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Run Sync Script
         run: python .github/scripts/sync_script.py

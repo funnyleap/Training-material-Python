@@ -33,8 +33,8 @@ def update_repo2(latest_file_content, repo2_name, file_path_in_repo2):
     repo.git.checkout(new_branch)
 
     # Set Git config
-    repo.git.config('user.email', 'saifeemustafaq@gmail.com')
-    repo.git.config('user.name', 'saifeemustafaq')
+    repo.git.config('user.email', '41898282+github-actions[bot]@users.noreply.github.com')
+    repo.git.config('user.name', 'github-actions[bot]')
 
     # Update the remote URL to include authentication token
     token = os.environ['YOUR_GITHUB_TOKEN']

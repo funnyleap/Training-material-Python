@@ -1,3 +1,7 @@
+# SAVEPOINT CHECKPOINT 1
+# THIS IS THE FIRST WORKING SAFEST CODE
+# Next addition to the code would be getting the commit history and then fetching files that are most recent
+
 from github import Github
 import git
 import os
@@ -64,3 +68,31 @@ def update_repo2(latest_file_content, repo2_name, file_path_in_repo2):
 latest_file = get_latest_file("saifeemustafaq/AIYA_December_2023", "ImageClassifierDoc")
 latest_file_content = latest_file.decoded_content.decode("utf-8")
 update_repo2(latest_file_content, "saifeemustafaq/OnboardingHarness", "JanBlogs/test.md")
+
+
+
+'''
+Links that helped you for authentication
+https://github.com/actions/checkout/issues/13
+https://github.com/actions/checkout/pull/1184
+https://github.com/actions/runner-images/blob/7fa12b880649ddd0a00fed00b79a5bd4aed462ab/.github/workflows/merge_pull_request.yml#L19-L20
+
+
+In the python file finally we used 
+    # Set Git config
+    repo.git.config('user.email', 'no-reply@github.com')
+    repo.git.config('user.name', 'Actions service account')
+
+    # Update the remote URL to include authentication token
+    token = os.environ['YOUR_GITHUB_TOKEN']
+    repo_url = repo2.clone_url.replace('https://', f'https://{token}@')
+    repo.git.remote('set-url', 'origin', repo_url)
+
+while in the yaml file we used:
+
+      - name: Set Git Config
+        run: |
+          git config user.name "Actions service account"
+          git config user.email "no-reply@github.com"
+
+'''

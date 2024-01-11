@@ -15,23 +15,18 @@ github_token = os.environ['YOUR_GITHUB_TOKEN']
 # Initialize the GitHub client with the token
 g = Github(github_token)
 
-def get_latest_file(repo_name: str, path: str) -> Repository.ContentFile:
+def get_latest_file(repo_name, path):
     repo = g.get_repo(repo_name)
-
-    # Get commits that affected the specified path
     commits = repo.get_commits(path=path)
     
-    # Iterate through commits starting from the most recent
     for commit in commits:
-        # Get files changed in the commit
         files = commit.files
-
-        # Check if there's a file in the specified path and return it
         for file in files:
             if file.filename.startswith(path):
                 return repo.get_contents(file.filename)
+    
+    return None
 
-    return None  # Return None if no file is found (shouldn't happen normally)
 
 def update_repo2(latest_file_content, repo2_name, file_path_in_repo2):
     repo2 = g.get_repo(repo2_name)

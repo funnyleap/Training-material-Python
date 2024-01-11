@@ -32,6 +32,10 @@ def update_repo2(latest_file_content, repo2_name, file_path_in_repo2):
     repo = git.Repo.clone_from(repo2.clone_url, repo2_dir)
     repo.git.checkout(new_branch)
 
+    # Set Git config
+    repo.git.config('user.email', 'saifeemustafaq@gmail.com')
+    repo.git.config('user.name', 'saifeemustafaq')
+
     # Update the file in repo2
     file_path = os.path.join(repo2_dir, file_path_in_repo2)
     with open(file_path, 'r+') as file:

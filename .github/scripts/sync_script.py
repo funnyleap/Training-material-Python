@@ -61,9 +61,27 @@ def update_repo2(latest_file_content, repo2_name, file_path_in_repo2):
     # Update the file in repo2
     file_path = os.path.join(repo2_dir, file_path_in_repo2)
     with open(file_path, 'r+') as file:
-        original_content = file.read()
+        lines = file.readlines()
         file.seek(0)
-        file.write(latest_file_content + "\n" + original_content)
+
+        # Keep the first seven lines as is
+        file.writelines(lines[:7])
+
+        # Add four blank lines
+        file.write('\n' * 4)
+
+        # Add the <details> and <summary> tags with the current date
+        current_date = datetime.datetime.now().strftime("%B %d, %Y")  # e.g., "January 12, 2024"
+        file.write(f"<details>\n<summary>{current_date}</summary>\n\n")
+
+        # Add the new content starting from the 12th line onwards
+        file.write(latest_file_content + "\n")
+
+        # Close the <details> tag
+        file.write("</details>\n")
+
+        # Append the rest of the existing content
+        file.writelines(lines[7:])
 
     # Commit and push changes
     repo.git.add(file_path_in_repo2)

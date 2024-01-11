@@ -27,6 +27,10 @@ def update_repo2(latest_file_content, repo2_name, file_path_in_repo2):
     # Create the new branch from the default branch
     repo2.create_git_ref(ref='refs/heads/' + new_branch, sha=source.commit.sha)
 
+    # Include the token in the clone URL for authentication
+    token = os.environ['YOUR_GITHUB_TOKEN']
+    repo2_clone_url = repo2.clone_url.replace('https://', f'https://{token}@')
+
     # Clone repo2 locally and checkout the new branch
     repo2_dir = '/tmp/repo2'
     repo = git.Repo.clone_from(repo2.clone_url, repo2_dir)

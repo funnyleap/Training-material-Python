@@ -25,8 +25,8 @@ jobs:
 
       - name: Set Git Config
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "Actions service account"
+          git config user.email "no-reply@github.com"
 
       - name: Run Sync Script
         run: python .github/scripts/sync_script.py

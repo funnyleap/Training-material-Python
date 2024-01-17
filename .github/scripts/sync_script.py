@@ -94,7 +94,7 @@ def update_repo2(latest_file_content, repo2_name, file_path_in_repo2):
 # Usage
 latest_file = get_latest_file("saifeemustafaq/AIYA_December_2023", "ImageClassifierDoc")
 latest_file_content = latest_file.decoded_content.decode("utf-8")
-update_repo2(latest_file_content, "saifeemustafaq/OnboardingHarness", "JanBlogs/test.md")
+update_repo2(latest_file_content, "saifeemustafaq/OnboardingHarness", "JanBlogs/performance-reports.md")
 
 
 

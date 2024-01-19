@@ -1,0 +1,70 @@
+pipeline:
+  name: test-gha-performance
+  identifier: testghaperformance
+  projectIdentifier: platformteam
+  orgIdentifier: QE_Team
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: mustafagit
+        repoName: AIYA_December_2023
+        build: <+input>
+  stages:
+    - stage:
+        name: release
+        identifier: release
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: Action_1
+                  identifier: Action_1
+                  spec:
+                    uses: actions/setup-python@v2
+                    with:
+                      python-version: "'3.x'"
+              - step:
+                  type: Run
+                  name: Install Dependencies
+                  identifier: Install_Dependencies
+                  spec:
+                    shell: Sh
+                    command: |-
+                      python -m pip install --upgrade pip
+                      pip install PyGithub GitPython
+              - step:
+                  type: Run
+                  name: Set Git
+                  identifier: Set_Git
+                  spec:
+                    shell: Sh
+                    command: |-
+                      git config user.name "Actions service account"
+                      git config user.email "no-reply@github.com"
+              - step:
+                  type: Run
+                  name: Run_3
+                  identifier: Run_3
+                  spec:
+                    shell: Sh
+                    command: python .github/scripts/sync_script.py
+                    envVariables:
+                      YOUR_GITHUB_TOKEN: <+secrets.getValue("mustafa-git-pat")
+          sharedPaths:
+            - ./ImageClassifierDoc/**
+          caching:
+            enabled: false
+            paths: []
+          slsa_provenance:
+            enabled: false

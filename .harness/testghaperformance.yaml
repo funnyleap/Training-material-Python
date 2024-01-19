@@ -60,7 +60,7 @@ pipeline:
                     shell: Sh
                     command: python .github/scripts/sync_script.py
                     envVariables:
-                      YOUR_GITHUB_TOKEN: <+secrets.getValue("mustafa-git-pat")
+                      YOUR_GITHUB_TOKEN: <+secrets.getValue("mustafagitpat")
           sharedPaths:
             - ./ImageClassifierDoc/**
           caching:
